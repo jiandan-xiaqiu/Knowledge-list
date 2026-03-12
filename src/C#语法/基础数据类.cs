@@ -13,7 +13,7 @@ class BaseDataClass
         string s2 = "World";
         string s3 = s1 + " " + s2; //使用+号拼接
         string s4 = string.Concat(s1, " ", s2); //使用Concat方法拼接
-        string s5 = string.Format("{0} {1}", s1, s2); //使用Format方法拼接
+        string s5 = string.Format("{0},{1}",1,2); //使用Format方法拼接
         string s6 = $"{s1} {s2}"; //使用字符串插值
 
         //字符串长度
@@ -55,7 +55,7 @@ class BaseDataClass
 
         //字符串格式化
         string formatted = string.Format("Name: {0}, Age: {1}", "John", 30);
-        string interpolated = $"Name: {'John'}, Age: {30}";
+        //string interpolated = $"Name: {'John'}, Age: {30}";
     }
 
     //数组
@@ -65,10 +65,35 @@ class BaseDataClass
     public int[] Arr1 = new int[10];
     //int[][]与int[,]的区别
     //int[][]交错数组：每行列数可以不同;不连续内存
-    //int[,]二维数组：所有行列数必须相同
+    //int[,]二维数组：所有行列数必须相同;连续内存
     public int[][] Arr2 = new int[2][];//可以第一维指定，第二维不指定
     public int[,] Arr3 = new int[2, 3];//可以指定二维数组的大小,但是不能只指定第二维
     public int[][] Arr4 = {{1,2,3},{4,5,6}};
+
+    //Array类
+    void Array(){
+        Array.Sort(Arr0);//排序
+        Array.Reverse(Arr0);//反转
+        Array.Copy(Arr0,Arr1,5);//复制
+    }
+
+    //列表
+    public List<int> list = new List<int>();
+
+    void List(){
+        list.Add(1);//添加元素
+        list.AddRange(new int[]{2,3,4});//添加范围
+
+        int index = list.IndexOf(3);//查找元素的索引
+        bool contains = list.Contains(2);//判断是否包含元素
+
+        list.Remove(3);//移除元素
+        list.RemoveAt(0);//移除指定索引的元素
+        list.Clear();//清空列表
+
+        list.Sort();//排序
+        int[] arr = list.ToArray();//转换为数组
+    }
 
     //栈
     public Stack<int> stack = new Stack<int>();
