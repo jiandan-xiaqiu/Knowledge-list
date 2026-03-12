@@ -3,6 +3,61 @@ using System;
 class BaseDataClass
 {
     public int i;
+    //字符串
+    public string str = "Hello World";
+    public string str1 = new string('a', 5); //创建包含5个'a'的字符串
+
+    void String(){
+        //字符串拼接
+        string s1 = "Hello";
+        string s2 = "World";
+        string s3 = s1 + " " + s2; //使用+号拼接
+        string s4 = string.Concat(s1, " ", s2); //使用Concat方法拼接
+        string s5 = string.Format("{0} {1}", s1, s2); //使用Format方法拼接
+        string s6 = $"{s1} {s2}"; //使用字符串插值
+
+        //字符串长度
+        int length = s3.Length;
+
+        //字符串截取
+        string substr1 = s3.Substring(0, 5); //从索引0开始，截取5个字符
+        string substr2 = s3.Substring(6); //从索引6开始，截取到末尾
+
+        //字符串查找
+        int index = s3.IndexOf("World"); //查找子串的索引
+        int lastIndex = s3.LastIndexOf("o"); //查找最后一个匹配的索引
+        bool contains = s3.Contains("Hello"); //判断是否包含子串
+
+        //字符串替换
+        string replaced = s3.Replace("World", "CSharp"); //替换子串
+
+        //字符串分割
+        string[] parts = s3.Split(' '); //按空格分割
+
+        //字符串转换
+        string upper = s3.ToUpper(); //转换为大写
+        string lower = s3.ToLower(); //转换为小写
+        int num = int.Parse("123"); //字符串转整数
+        string numStr = 123.ToString(); //整数转字符串
+
+        //字符串判断
+        bool isEmpty = string.IsNullOrEmpty(""); //判断是否为空或null
+        bool isWhiteSpace = string.IsNullOrWhiteSpace("   "); //判断是否为空白字符
+
+        //字符串修剪
+        string trimmed = "  Hello  ".Trim(); //修剪两端空白
+        string trimmedStart = "  Hello  ".TrimStart(); //修剪开头空白
+        string trimmedEnd = "  Hello  ".TrimEnd(); //修剪结尾空白
+
+        //字符串比较
+        bool equals = s1.Equals("Hello"); //比较字符串
+        int compare = string.Compare(s1, "Hello"); //比较字符串大小
+
+        //字符串格式化
+        string formatted = string.Format("Name: {0}, Age: {1}", "John", 30);
+        string interpolated = $"Name: {'John'}, Age: {30}";
+    }
+
     //数组
     public int[] Arr;
 
